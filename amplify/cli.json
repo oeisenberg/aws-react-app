@@ -1,7 +1,6 @@
 {
   "features": {
     "graphqltransformer": {
-      "securityEnhancementNotification": false,
       "addmissingownerfields": true,
       "improvepluralization": false,
       "validatetypenamereservedwords": true,
