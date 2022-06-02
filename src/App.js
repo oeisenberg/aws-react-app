@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotesm, authMode: 'AWS_IAM' });
+    const apiData = await API.graphql({ query: listNotes, authMode: 'AWS_IAM' });
     setNotes(apiData.data.listNotes.items);
   }
 
