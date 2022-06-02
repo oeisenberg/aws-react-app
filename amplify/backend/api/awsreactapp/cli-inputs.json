@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "awsreactapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "W:\\Dropbox\\Important Documents\\Applications\\2022 Roles\\JP Morgan\\aws_react_app\\amplify\\backend\\api\\awsreactapp\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
