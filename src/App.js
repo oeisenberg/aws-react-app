@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotes, authMode: 'AWS_IAM' });
+    const apiData = await API.graphql({ query: listNotes});
     setNotes(apiData.data.listNotes.items);
   }
 
@@ -30,7 +30,6 @@ function App() {
     await API.graphql({
       query: createNoteMutation,
       variables: { input: formData },
-      authMode: 'AWS_IAM' 
     });
     setNotes([...notes, formData]);
     setFormData(initialFormState);
@@ -42,7 +41,6 @@ function App() {
     await API.graphql({
       query: deleteNoteMutation,
       variables: { input: { id } },
-      authMode: 'AWS_IAM'
     });
   }
 
