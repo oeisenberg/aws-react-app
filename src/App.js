@@ -10,8 +10,6 @@ import {
 
 const initialFormState = { name: "", description: "" };
 
-
-
 function App() {
   const [notes, setNotes] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
@@ -21,18 +19,24 @@ function App() {
   }, []);
 
   async function fetchNotes() {
-    const apiData = await API.graphql({ query: listNotes});
-    setNotes(apiData.data.listNotes.items);
+    try {
+      const apiData = await API.graphql({ query: listNotes });
+      setNotes(apiData.data.listNotes.items);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   async function createNote() {
     if (!formData.name || !formData.description) return;
-    await API.graphql({
+    // https://stackoverflow.com/questions/66394638/amplify-amateur-errors-uncaught-in-promise-and-each-child-should-have-a-uniqu
+    const result = await API.graphql({
       query: createNoteMutation,
       variables: { input: formData },
     });
-    setNotes([...notes, formData]);
-    setFormData(initialFormState);
+    console.log(formData);
+    setNotes([...notes, { ...result.data.createNote, ...formData }]);
+    // setFormData(initialFormState);
   }
 
   async function deleteNote({ id }) {
