@@ -6,7 +6,11 @@
     "gqlSchemaPath": "W:\\Dropbox\\Important Documents\\Applications\\2022 Roles\\JP Morgan\\aws_react_app\\amplify\\backend\\api\\awsreactapp\\schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "expirationTime": 7,
+      "apiKeyExpirationDate": "2022-06-10T11:01:11.573Z",
+      "keyDescription": "demo"
+    },
+    "additionalAuthTypes": [],
+    "conflictResolution": {}
   }
 }
